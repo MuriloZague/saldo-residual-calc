@@ -1,0 +1,117 @@
+:root {
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --texto: #1f2933;
+  --suave: #616e7c;
+  --borda: #d9dee4;
+  --primaria: #1d4ed8;
+  --negativo: #b91c1c;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--texto);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; background: var(--bg); }
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+header h1 { margin: 0 0 4px; font-size: 1.6rem; }
+header p { margin: 0 0 20px; color: var(--suave); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 0 0 16px;
+}
+
+legend { font-weight: 600; padding: 0 6px; }
+
+.topo, .grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+input, select {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.checkbox { justify-content: center; }
+.checkbox input { width: 16px; height: 16px; vertical-align: -2px; }
+
+input[aria-invalid='true'] { border-color: var(--negativo); }
+
+.dica { font-size: 0.78rem; font-weight: 400; color: var(--suave); }
+.erro { font-size: 0.78rem; color: var(--negativo); }
+
+button { font: inherit; cursor: pointer; }
+
+.adicionar, .imprimir {
+  background: var(--primaria);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 9px 16px;
+}
+
+.link {
+  margin-top: 10px;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--negativo);
+  text-decoration: underline;
+}
+
+.aviso { color: var(--suave); margin: 20px 0; }
+
+.resumo { margin-top: 28px; }
+.tabela-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  font-size: 0.92rem;
+}
+
+th, td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--borda);
+  text-align: right;
+  white-space: nowrap;
+}
+
+th:first-child, td:first-child { text-align: left; }
+thead th { background: #eef1f5; }
+tfoot td { font-weight: 600; background: #eef1f5; }
+
+.negativo { color: var(--negativo); }
+
+.memoria { margin: 10px 0; font-size: 0.9rem; }
+.memoria ul { margin: 4px 0 0; padding-left: 20px; color: var(--suave); }
+
+@media print {
+  .card, .adicionar, .imprimir { display: none; }
+  body, main { background: #fff; }
+}
